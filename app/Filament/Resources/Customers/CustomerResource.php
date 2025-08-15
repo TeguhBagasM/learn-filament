@@ -13,12 +13,18 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class CustomerResource extends Resource
 {
     protected static ?string $model = CustomerModel::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Users;
+    protected static ?string $navigationLabel = 'Customer';
+    protected static string | UnitEnum | null $navigationGroup = 'Kelola Data';
+
+    public static ?string $label = 'Customer';
+    public static ?string $slug = 'kelola-customer';
 
     public static function form(Schema $schema): Schema
     {

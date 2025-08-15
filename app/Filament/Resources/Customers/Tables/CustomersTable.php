@@ -15,6 +15,13 @@ class CustomersTable
         return $table
             ->columns([
                 TextColumn::make('nama_customer')
+                    ->searchable(),
+                TextColumn::make('kode_customer')
+                    ->searchable(),
+                TextColumn::make('alamat_customer')
+                    ->searchable(),
+                TextColumn::make('telepon_customer')
+                    ->searchable(),
 
             ])
             ->filters([
