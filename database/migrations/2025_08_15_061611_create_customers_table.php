@@ -19,8 +19,7 @@ return new class extends Migration
 			$table->string('kode_customer');
 			$table->string('alamat_customer');
 			$table->string('telepon_customer');
-
-            $table->timestampSoftDelete();
+            $table->timestamps();
         });
     }
 
