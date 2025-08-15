@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('faktur_id')->constrained('fakturs')->cascadeOnDelete();
             $table->foreignId('barang_id')->constrained('barangs')->cascadeOnDelete();
             $table->integer('qty');
-            $table->integer('harga');
+            $table->integer('harga_barang');
             $table->integer('diskon')->default(0);
             $table->integer('subtotal');
             $table->integer('hasil_qty');
