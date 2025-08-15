@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+/*************  ✨ Windsurf Command 🌟  *************/
     /**
      * Run the migrations.
      */
@@ -16,16 +17,17 @@ return new class extends Migration
             $table->string('kode_faktur')->unique();
             $table->date('tanggal_faktur');
             $table->string('kode_customer');
-            $table->foreign('customer_id')->constrained('customers', 'id')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('ket_faktur')->nullable();
-            $table->integer('total');
-            $table->integer('nominal_charge');
-            $table->integer('charge');
-            $table->integer('total_final');
+            $table->integer('total')->default(0);
+            $table->integer('nominal_charge')->default(0);
+            $table->integer('charge')->default(0);
+            $table->integer('total_final')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
     }
+/*******  f94b7619-ec53-4b85-8d68-a3bd71465e04  *******/
 
     /**
      * Reverse the migrations.

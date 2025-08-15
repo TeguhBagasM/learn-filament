@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+/*************  ✨ Windsurf Command 🌟  *************/
     /**
      * Run the migrations.
      */
@@ -13,17 +14,26 @@ return new class extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('barang_id')->constrained('barangs', 'id')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('customer_id')->constrained('customers', 'id')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->integer('diskon');
-            $table->string('nama_barang');
-            $table->bigInteger('harga');
-            $table->bigInteger('subtotal');
-            $table->integer('qty');
-            $table->integer('hasil_qty');
+            $table->foreignId('barang_id')
+                ->constrained('barangs', 'id')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreignId('customer_id')
+                ->constrained('customers', 'id')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->integer('diskon')->nullable();
+            $table->string('nama_barang')->nullable();
+            $table->bigInteger('harga')->nullable();
+            $table->bigInteger('subtotal')->nullable();
+            $table->integer('qty')->nullable();
+            $table->integer('hasil_qty')->nullable();
             $table->timestamps();
         });
     }
+/*******  d3e74daf-5205-4519-97ce-47ca9cc827f3  *******/
 
     /**
      * Reverse the migrations.
