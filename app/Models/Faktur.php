@@ -18,7 +18,7 @@ class Faktur extends Model
     }
 
     public function detail()
-    {
-        return $this->hasMany(Detail::class, 'faktur_id');
-    }
+{
+    return $this->hasMany(Detail::class, 'faktur_id');
+}
 }

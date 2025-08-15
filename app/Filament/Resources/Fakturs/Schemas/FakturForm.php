@@ -30,15 +30,21 @@ class FakturForm
                         Select::make('barang_id')
                             ->relationship('barang', 'nama_barang')
                             ->required(),
-                        
-                        TextInput::make('kode_barang')
+                        TextInput::make('diskon')
+                            ->numeric(),
+                        TextInput::make('harga')
+                            ->numeric()
                             ->required(),
-                        TextInput::make('jumlah_barang')
+                        TextInput::make('subtotal')
+                            ->numeric()
                             ->required()
-                            ->numeric(),
-                        TextInput::make('harga_barang')
-                            ->required()
-                            ->numeric(),
+                            ->default(0),
+                        TextInput::make('qty')
+                            ->numeric()
+                            ->required(),
+                        TextInput::make('hasil_qty')
+                            ->numeric()
+                            ->required(),
                     ])
                     ->columnSpanFull(),
                 Textarea::make('ket_faktur')

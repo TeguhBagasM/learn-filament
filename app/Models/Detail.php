@@ -16,8 +16,8 @@ class Detail extends Model
     }
 
     public function faktur()
-    {
-        return $this->belongsTo(Faktur::class, 'id');
-    }
+{
+    return $this->belongsTo(Faktur::class, 'faktur_id');
+}
 
 }

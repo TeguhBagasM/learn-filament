@@ -16,8 +16,14 @@ return new class extends Migration
             $table->string('kode_faktur')->unique();
             $table->date('tanggal_faktur');
             $table->string('kode_customer');
+            $table->foreignId('customer_id')->constrained('customers', 'id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('ket_faktur')->nullable();
+            $table->integer('total');
+            $table->integer('nominal_charge');
+            $table->integer('charge');
+            $table->integer('total_final');
             $table->softDeletes();
+
             $table->timestamps();
         });
     }
